@@ -1,0 +1,17 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
+.btn-new {
+  background-color: #fff;
+}
+
+.btn-new:hover{
+  background-color: #31ac60;
+  color: #fff;
+  border-color: #31ac60;
+}

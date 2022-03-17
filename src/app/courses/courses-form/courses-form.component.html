@@ -1,0 +1,32 @@
+<form class="example-form" [formGroup]="form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Nome</mat-label>
+    <input
+      type="text"
+      placeholder="Nome"
+      aria-label="Nome"
+      matInput
+      formControlName="name"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Categoria</mat-label>
+    <input
+      type="text"
+      placeholder="Categoria"
+      aria-label="Categoria"
+      matInput
+      formControlName="category"
+    />
+  </mat-form-field>
+
+  <div style="margin-top: 10px;">
+    <button mat-button color="primary" (click)="onSave()">Salvar</button>
+    <button mat-button (click)="onCancel()">Cancelar</button>
+  </div>
+</form>
+
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

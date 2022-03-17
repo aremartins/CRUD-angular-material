@@ -1,0 +1,34 @@
+http://localhost:3000/cursos
+
+###
+GET http://localhost:3000/cursos/2
+
+
+###
+POST http://localhost:3000/cursos HTTP/1.1
+content-type: application/json
+
+{
+    "name": "HTML",
+    "category": "fRONT"
+}
+
+###
+
+PUT http://localhost:3000/cursos/6 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "AWS",
+    "category": "DevOps"
+}
+
+###
+
+DELETE http://localhost:3000/cursos/2 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "AWS",
+    "category": "Devops"
+}
