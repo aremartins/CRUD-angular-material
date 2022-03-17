@@ -5,7 +5,7 @@ import { CoursesService } from '../services/courses.service';
 import { Location } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SaveSuccessComponent } from 'src/app/shared/components/save-success/save-success.component';
-
+import { map, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-courses-form',
@@ -27,14 +27,21 @@ export class CoursesFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe((params: any) => {
-      const id = params['id'];
-      console.log(id);
-      const curso$ = this.coursesService.loadByID(id);
-      curso$.subscribe((curso) => {
-        this.updateForm(curso);
-      });
-    });
+    // this.route.params.subscribe((params: any) => {
+    //   const id = params['id'];
+    //   console.log(id);
+    //   const curso$ = this.coursesService.loadByID(id);
+    //   curso$.subscribe((curso) => {
+    //     this.updateForm(curso);
+    //   });
+    // });
+
+    this.route.params
+      .pipe(
+        map((params: any) => params['id']),
+        switchMap((id) => this.coursesService.loadByID(id))
+      )
+      .subscribe((curso) => this.updateForm(curso));
 
     this.coursesService.list();
     this.form = this.formBuilder.group({
