@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, Observable, of } from 'rxjs';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.components';
 
@@ -22,6 +22,7 @@ export class CoursesComponent implements OnInit {
     private coursesServices: CoursesService,
     private dialog: MatDialog,
     private router: Router,
+    private route: ActivatedRoute
 
   ) {}
 
@@ -50,7 +51,7 @@ export class CoursesComponent implements OnInit {
     });
   }
 
-  onEdit() {
-    this.router.navigate(['editar']);
+  onEdit(id:any) {
+    this.router.navigate(['editar', id], {relativeTo: this.route});
   }
 }

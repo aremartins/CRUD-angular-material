@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CoursesService } from '../services/courses.service';
 import { Location } from '@angular/common';
-import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SaveSuccessComponent } from 'src/app/shared/components/save-success/save-success.component';
+
 
 @Component({
   selector: 'app-courses-form',
@@ -15,17 +15,30 @@ import { SaveSuccessComponent } from 'src/app/shared/components/save-success/sav
 export class CoursesFormComponent implements OnInit {
   form!: FormGroup;
   submitted: boolean = false;
-  durationInSeconds = 2;
+  durationInSeconds = 5;
 
   constructor(
     private formBuilder: FormBuilder,
     private coursesService: CoursesService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private router: Router,
+    private location: Location,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
+    this.route.params.subscribe((params: any) => {
+      const id = params['id'];
+      console.log(id);
+      const curso$ = this.coursesService.loadByID(id);
+      curso$.subscribe((curso) => {
+        this.updateForm(curso);
+      });
+    });
+
     this.coursesService.list();
     this.form = this.formBuilder.group({
+      id: [null],
       name: [
         null,
         [
@@ -45,6 +58,13 @@ export class CoursesFormComponent implements OnInit {
     });
   }
 
+  updateForm(curso: any) {
+    this.form.patchValue({
+      id: curso.id,
+      name: curso.name,
+    });
+  }
+
   onSave() {
     this.submitted = true;
     console.log(this.form.value);
@@ -58,6 +78,7 @@ export class CoursesFormComponent implements OnInit {
         (error) => console.log(error),
         () => console.log('request completo')
       );
+      this.location.back();
     }
   }
 

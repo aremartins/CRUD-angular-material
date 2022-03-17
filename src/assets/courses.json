@@ -189,6 +189,21 @@
       "name": "maçã",
       "category": "maçã",
       "id": 39
+    },
+    {
+      "name": "python",
+      "category": "backend",
+      "id": 40
+    },
+    {
+      "name": "maria",
+      "category": "maria",
+      "id": 41
+    },
+    {
+      "name": "voltar",
+      "category": "voltar",
+      "id": 42
     }
   ]
 }

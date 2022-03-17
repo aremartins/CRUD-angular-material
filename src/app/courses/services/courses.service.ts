@@ -21,6 +21,10 @@ export class CoursesService {
     );
   }
 
+  loadByID(id:any) {
+    return this.http.get(`${this.url}/${id}`).pipe(take(1));
+  }
+
   create(course: Course): Observable<Course[]>{
     return this.http.post<Course[]>(this.url, course)
     .pipe(
