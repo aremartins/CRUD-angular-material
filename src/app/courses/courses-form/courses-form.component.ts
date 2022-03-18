@@ -36,18 +36,24 @@ export class CoursesFormComponent implements OnInit {
     //   });
     // });
 
-    this.route.params
-      .pipe(
-        map((params: any) => params['id']),
-        switchMap((id) => this.coursesService.loadByID(id))
-      )
-      .subscribe((curso) => this.updateForm(curso));
+    // this.route.params
+    //   .pipe(
+    //     map((params: any) => params['id']),
+    //     switchMap(id => this.coursesService.loadByID(id))
+    //   )
+    //   .subscribe(curso => this.updateForm(curso));
+
+    //concatMap -> ordem da requisição importa
+    //mergeMap -> ordem da requisição importa
+    //exhaustMap -> caso de login
 
     this.coursesService.list();
+
+    const course = this.route.snapshot.data['course'];
     this.form = this.formBuilder.group({
-      id: [null],
+      id: [course.id],
       name: [
-        null,
+        course.name,
         [
           Validators.required,
           Validators.minLength(3),
@@ -55,7 +61,7 @@ export class CoursesFormComponent implements OnInit {
         ],
       ],
       category: [
-        null,
+        course.category,
         [
           Validators.required,
           Validators.minLength(3),
@@ -65,27 +71,40 @@ export class CoursesFormComponent implements OnInit {
     });
   }
 
-  updateForm(curso: any) {
-    this.form.patchValue({
-      id: curso.id,
-      name: curso.name,
-    });
-  }
+  // updateForm(curso: any) {
+  //   this.form.patchValue({
+  //     id: curso.id,
+  //     name: curso.name,
+  //   });
+  // }
 
   onSave() {
     this.submitted = true;
     console.log(this.form.value);
     if (this.form.valid) {
       console.log('submit');
-      this.coursesService.create(this.form.value).subscribe(
-        (success) => {
-          console.log(success);
-          this.openSnackBar();
-        },
-        (error) => console.log(error),
-        () => console.log('request completo')
-      );
-      this.location.back();
+      if (this.form.value.id) {
+        this.coursesService.update(this.form.value).subscribe(
+          (success) => {
+            console.log(success);
+            this.openSnackBar();
+            this.location.back();
+          },
+          (error) => console.log(error),
+          () => console.log('request completo')
+        );
+      } else {
+        this.coursesService.create(this.form.value).subscribe(
+          (success) => {
+            console.log(success);
+            this.openSnackBar();
+            this.location.back();
+          },
+          (error) => console.log(error),
+          () => console.log('request completo')
+        );
+        this.location.back();
+      }
     }
   }
 

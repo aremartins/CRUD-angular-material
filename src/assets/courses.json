@@ -31,14 +31,14 @@
       "id": 7
     },
     {
-      "name": "arealbmartinsan@gmail.com",
-      "category": "341.981.738-00",
-      "id": 8
+      "id": 8,
+      "name": "react",
+      "category": "front"
     },
     {
-      "name": "arealbmartinsan@gmail.com",
-      "category": "341.981.738-00",
-      "id": 9
+      "id": 9,
+      "name": "lógica",
+      "category": "programação"
     },
     {
       "name": "Java",
@@ -204,6 +204,26 @@
       "name": "voltar",
       "category": "voltar",
       "id": 42
+    },
+    {
+      "id": 43,
+      "name": "ionic",
+      "category": "mobile"
+    },
+    {
+      "id": 44,
+      "name": "Material 8",
+      "category": "front"
+    },
+    {
+      "id": 45,
+      "name": "JavaScript6",
+      "category": "front"
+    },
+    {
+      "id": 46,
+      "name": ".net",
+      "category": "backend"
     }
   ]
 }
