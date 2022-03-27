@@ -34,4 +34,8 @@ export class CoursesService {
   update(course: Course) {
     return this.http.put(`${this.url}/${course.id}`, course).pipe(take(1));
   }
+
+  remove(id:any) {
+    return this.http.delete(`${this.url}/${id}`).pipe(take(1));
+  }
 }

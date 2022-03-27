@@ -1,11 +1,11 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { CoursesService } from '../services/courses.service';
-import { Location } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SaveSuccessComponent } from 'src/app/shared/components/save-success/save-success.component';
-import { map, switchMap } from 'rxjs';
+
+import { CoursesService } from '../services/courses.service';
 
 @Component({
   selector: 'app-courses-form',
@@ -98,7 +98,7 @@ export class CoursesFormComponent implements OnInit {
           (success) => {
             console.log(success);
             this.openSnackBar();
-            this.location.back();
+            //this.location.back();
           },
           (error) => console.log(error),
           () => console.log('request completo')
@@ -117,7 +117,6 @@ export class CoursesFormComponent implements OnInit {
   onCancel() {
     this.submitted = false;
     this.form.reset();
-    console.log('cancelado');
-    //this.router.navigate(['courses'])
+    this.router.navigate(['courses'])
   }
 }

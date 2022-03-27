@@ -11,14 +11,9 @@
       "category": "front-end"
     },
     {
-      "id": 4,
-      "name": "C#",
-      "category": "back-end"
-    },
-    {
+      "id": 5,
       "name": "Figma",
-      "category": "front-end",
-      "id": 5
+      "category": "front-end"
     },
     {
       "name": "AWS",
@@ -31,24 +26,9 @@
       "id": 7
     },
     {
-      "id": 8,
-      "name": "react",
-      "category": "front"
-    },
-    {
-      "id": 9,
-      "name": "lógica",
-      "category": "programação"
-    },
-    {
       "name": "Java",
       "category": "backend",
       "id": 10
-    },
-    {
-      "name": "java",
-      "category": "backend",
-      "id": 11
     },
     {
       "name": "Kotlin",
@@ -56,174 +36,14 @@
       "id": 12
     },
     {
-      "name": "php",
-      "category": "backend",
-      "id": 13
-    },
-    {
-      "name": "python",
-      "category": "backend",
-      "id": 14
+      "id": 14,
+      "name": "Python",
+      "category": "backend"
     },
     {
       "name": "django",
       "category": "front",
       "id": 15
-    },
-    {
-      "name": "bla",
-      "category": "baf",
-      "id": 16
-    },
-    {
-      "name": "rebecca",
-      "category": "rebecca",
-      "id": 17
-    },
-    {
-      "name": "bola",
-      "category": "bola",
-      "id": 18
-    },
-    {
-      "name": "Material 5",
-      "category": "sdg",
-      "id": 19
-    },
-    {
-      "name": "Material 5",
-      "category": "sdg",
-      "id": 20
-    },
-    {
-      "name": "Material 5",
-      "category": "sdg",
-      "id": 21
-    },
-    {
-      "name": "material6",
-      "category": "fsaf",
-      "id": 22
-    },
-    {
-      "name": "material6",
-      "category": "fsaf",
-      "id": 23
-    },
-    {
-      "name": "mat4",
-      "category": "mar",
-      "id": 24
-    },
-    {
-      "name": "afsdf",
-      "category": "dsfsags",
-      "id": 25
-    },
-    {
-      "name": "dgah",
-      "category": "sadggag",
-      "id": 26
-    },
-    {
-      "name": "dghgah",
-      "category": "sdgag",
-      "id": 27
-    },
-    {
-      "name": "dfaha",
-      "category": "asdgag",
-      "id": 28
-    },
-    {
-      "name": "bolinha",
-      "category": "bolinha",
-      "id": 29
-    },
-    {
-      "name": "341.981.738-00",
-      "category": "sdf",
-      "id": 30
-    },
-    {
-      "name": "fazenda",
-      "category": "fasc",
-      "id": 31
-    },
-    {
-      "name": "chiclete",
-      "category": "chil",
-      "id": 32
-    },
-    {
-      "name": "dfag",
-      "category": "agg",
-      "id": 33
-    },
-    {
-      "name": "fdsga",
-      "category": "gasdg",
-      "id": 34
-    },
-    {
-      "name": "sdgag",
-      "category": "gaf",
-      "id": 35
-    },
-    {
-      "name": "dsgsg",
-      "category": "gggggggggg",
-      "id": 36
-    },
-    {
-      "name": "sdag",
-      "category": "agsgsg",
-      "id": 37
-    },
-    {
-      "name": "banbna",
-      "category": "backend",
-      "id": 38
-    },
-    {
-      "name": "maçã",
-      "category": "maçã",
-      "id": 39
-    },
-    {
-      "name": "python",
-      "category": "backend",
-      "id": 40
-    },
-    {
-      "name": "maria",
-      "category": "maria",
-      "id": 41
-    },
-    {
-      "name": "voltar",
-      "category": "voltar",
-      "id": 42
-    },
-    {
-      "id": 43,
-      "name": "ionic",
-      "category": "mobile"
-    },
-    {
-      "id": 44,
-      "name": "Material 8",
-      "category": "front"
-    },
-    {
-      "id": 45,
-      "name": "JavaScript6",
-      "category": "front"
-    },
-    {
-      "id": 46,
-      "name": ".net",
-      "category": "backend"
     }
   ]
 }
