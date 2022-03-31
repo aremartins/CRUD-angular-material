@@ -1,0 +1,30 @@
+<input
+  matInput
+  type="search"
+  name=""
+  id=""
+  [formControl]="queryField"
+  placeholder="Pesquisar libs"
+/>
+
+<button matButton (click)="onSearch()">Pesquisar</button>
+
+<h3>{{ total }}</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Versão</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let result of results$ | async">
+      <td>
+        {{ result.name }}
+      </td>
+      <td>
+        {{ result.version }}
+      </td>
+    </tr>
+  </tbody>
+</table>

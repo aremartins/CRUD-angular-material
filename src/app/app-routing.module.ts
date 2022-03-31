@@ -13,6 +13,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./courses/courses.module').then((m) => m.CoursesModule),
   },
+  {
+    path: 'busca-reativa',
+    loadChildren: () => import ('./reactive-search/reactive-search.module').then((m) => m.ReactiveSearchModule)
+  }
 ];
 
 @NgModule({
