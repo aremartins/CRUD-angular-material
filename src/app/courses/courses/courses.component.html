@@ -49,10 +49,20 @@
     </table>
   </div>
 
+  <ng-template #deleteModal>
+    <div class="modal-body">
+      <p>Do you want to confirm?</p>
+      <button mat-button color="primary" click="confirmDelete()">Yes</button>
+      <button mat-button color="primary" click="declineDelete()">No</button>
+    </div>
+  </ng-template>
+
 
     <ng-template #loading>
       <div class="loading"><mat-spinner></mat-spinner></div>
     </ng-template>
+
+
 
 
 

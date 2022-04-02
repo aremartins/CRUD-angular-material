@@ -1,0 +1,9 @@
+<div class="modal-body">
+  <div class="confirm-dialog-container" style="padding-bottom:15px">
+    <mat-icon id="close-icon" (click)="closeDialog()">close</mat-icon>
+    <span class="content-span full-width" >{{ data.message }}</span>
+  </div>
+
+<button mat-button id="yes-button" color="primary" [mat-dialog-close]="true" click="confirmDelete()">Yes</button>
+  <button mat-button id="no-button" color="warm" [mat-dialog-close]="false" click="declineDelete()">No</button>
+</div>
